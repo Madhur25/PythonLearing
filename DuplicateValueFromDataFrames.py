@@ -21,7 +21,7 @@ df2 = df2.reset_index(drop=True)
 print(df2)
 #Group by columns
 df_gpby = df2.groupby(list(df2.columns))
-#Get the index of unique item
+#Get the index of duplicate item
 idx = [x[0] for x in df_gpby.groups.values() if len(x) == 2]
 #Write Data to excel file
 df2.reindex(idx).to_excel('filePath')
